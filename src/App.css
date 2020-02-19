@@ -15,18 +15,16 @@
   padding: 0;;
   overflow: hidden;
   background-color: #333333;
+  height: 50px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: large;
 }
 
 .navbar li {
   float: left;
-}
-
-.navbar li h3 {
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  color: white;
 }
 
 .navbar li a {
