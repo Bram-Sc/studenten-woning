@@ -1,13 +1,13 @@
 import React from 'react';
 import "./App.css";
 
-function Message(props) {
+function Item(props) {
     return(
-        <div className="message">
+        <div className="item">
             <p>Name: {props.name}</p>
             <p>{props.message}</p>
         </div>
     );
 }
 
-export default Message;
+export default Item;

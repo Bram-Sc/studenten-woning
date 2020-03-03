@@ -1,5 +1,5 @@
 import React from 'react';
-import Message from './Message';
+import Item from './Item';
 import Layout from './Layout';
 
 function App() {
@@ -8,13 +8,15 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <body>
       <Layout />
       <button onClick={testMsg}>test</button>
-      <Message name="Greg" message="first"/>
-      <Message name="Steve" message="second"/>
-      <Message name="Steve" message="second"/>
-    </div>
+      <div className="flex">
+        <Item name="Greg" message="first"/>
+        <Item name="Steve" message="second"/>
+        <Item name="Bob" message="third"/>
+      </div>
+    </body>
   );
 }
 
