@@ -38,3 +38,8 @@
 .navbar li a:hover {
   background-color: black;
 }
+
+.navbar .right {
+  float: right;
+  background-color: rgb(4, 128, 4);
+}

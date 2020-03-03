@@ -14,10 +14,6 @@ function App() {
       <Message name="Greg" message="first"/>
       <Message name="Steve" message="second"/>
       <Message name="Steve" message="second"/>
-      <ul>
-        <li>test</li>
-        <li>test</li>
-      </ul>
     </div>
   );
 }
