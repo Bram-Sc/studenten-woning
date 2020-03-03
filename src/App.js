@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Item from './Item';
+import Layout from './Layout';
 
 function App() {
+  const testMsg = () => {
+    console.log("Yes");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <body>
+      <Layout />
+      <button onClick={testMsg}>test</button>
+      <div className="flex">
+        <Item name="Greg" message="first"/>
+        <Item name="Steve" message="second"/>
+        <Item name="Bob" message="third"/>
+      </div>
+    </body>
   );
 }
 
