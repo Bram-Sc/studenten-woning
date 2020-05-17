@@ -1,18 +1,37 @@
 import React from 'react';
-import Item from './Item';
-import Layout from './Layout';
+import HomePage from "./Pages/HomePage.js";
+import NewProduct from "./Pages/AddProduct";
+import Navbar from "./Components/Navbar";
+import History from "./Components/History";
+
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <body>
-      <Layout />
-      <div className="flex">
-        <Item name="Greg" message="first"/>
-        <Item name="Steve" message="second"/>
-        <Item name="Bob" message="third"/>
-      </div>
-    </body>
-  );
+    <Router history={History}>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/index">
+          <Home />
+        </Route>
+        <Route path="/addProduct">
+          <AddProduct />
+        </Route>
+      </Switch>
+    </Router>
+  )
+}
+
+function Home() {
+  return <HomePage />;
+}
+
+function AddProduct() {
+  return <NewProduct />;
 }
 
 export default App;
