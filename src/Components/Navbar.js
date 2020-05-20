@@ -1,9 +1,29 @@
 import React from 'react';
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles, createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'sans-serif',
+      'Arial',
+      'Roboto',
+      '"Segoe UI"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Helvetica Neue"',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    button: {
+      textTransform: "none"
+    }
+  },
+});
 
 const useStyles = makeStyles(
   createStyles({
@@ -29,22 +49,24 @@ export default function Navbar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.NavBar}>
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <Button href="/index" color="inherit">
-              Studenten Woning
+    <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+        <AppBar position="static" className={classes.NavBar}>
+          <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+              <Button href="/index" color="inherit">
+                Studenten Woning
             </Button>
-            <Button href="/addProduct" color="inherit">
-              Add product
+              <Button href="/addProduct" color="inherit">
+                Add product
             </Button>
-            <Button href="/login" color="inherit">
-              Log in
+              <Button href="/login" color="inherit">
+                Log in
             </Button>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </div>
+    </ThemeProvider>
   )
 }
