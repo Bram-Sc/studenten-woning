@@ -8,16 +8,7 @@ import Button from "@material-ui/core/Button";
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      'sans-serif',
-      'Arial',
-      'Roboto',
-      '"Segoe UI"',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Helvetica Neue"',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
+      'Comic Sans MS',
     ].join(','),
     button: {
       textTransform: "none"

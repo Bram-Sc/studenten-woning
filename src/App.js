@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from "./Pages/HomePage.js";
+import HomePage from "./Pages/HomePage.jsx";
 import NewProduct from "./Pages/AddProduct";
 import Navbar from "./Components/Navbar";
 import History from "./Components/History";
