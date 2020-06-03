@@ -38,6 +38,21 @@ const useStyles = makeStyles(
 
 export default function Navbar() {
   const classes = useStyles();
+  var login = "";
+
+  if (localStorage.getItem("JWT") == "null") {
+    login = "Log in";
+  } else {
+    login = "Log out";
+  }
+
+  function checkLogin(e) {
+    if (localStorage.getItem("JWT") != "null") {
+      localStorage.setItem("JWT", "null");
+      e.preventDefault();
+      window.location.reload(false); //TODO: only reloads from chache, might change if needed
+    }
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -51,8 +66,8 @@ export default function Navbar() {
               <Button href="/addProduct" color="inherit">
                 Add product
             </Button>
-              <Button href="/login" color="inherit">
-                Log in
+              <Button id="LogoutButton" onClick={checkLogin} href="/login" color="inherit">
+                {login}
             </Button>
             </Typography>
           </Toolbar>

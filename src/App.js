@@ -1,6 +1,8 @@
 import React from 'react';
 import HomePage from "./Pages/HomePage.jsx";
 import NewProduct from "./Pages/AddProduct";
+import LoginPage from "./Pages/LoginPage";
+import RegisterPage from "./Pages/RegisterPage";
 import Navbar from "./Components/Navbar";
 import History from "./Components/History";
 
@@ -20,6 +22,12 @@ function App() {
         </Route>
         <Route path="/addProduct">
           <AddProduct />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/register">
+          <RegisterPage />
         </Route>
       </Switch>
     </Router>
