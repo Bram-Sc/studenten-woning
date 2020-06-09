@@ -8,16 +8,7 @@ import Button from "@material-ui/core/Button";
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      'sans-serif',
-      'Arial',
-      'Roboto',
-      '"Segoe UI"',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Helvetica Neue"',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
+      'Comic Sans MS',
     ].join(','),
     button: {
       textTransform: "none"
@@ -47,6 +38,21 @@ const useStyles = makeStyles(
 
 export default function Navbar() {
   const classes = useStyles();
+  var login = "";
+
+  if (localStorage.getItem("JWT") === "null" || localStorage.getItem("JWT") === null) {
+    login = "Log in";
+  } else {
+    login = "Log out";
+  }
+
+  function checkLogin(e) {
+    if (localStorage.getItem("JWT") !== "null" && localStorage.getItem("JWT") !== null) {
+      localStorage.setItem("JWT", "null");
+      e.preventDefault();
+      window.location.reload(false);
+    }
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,15 +60,18 @@ export default function Navbar() {
         <AppBar position="static" className={classes.NavBar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              <Button href="/index" color="inherit">
+              <Button id="Home" href="/index" color="inherit">
                 Studenten Woning
             </Button>
-              <Button href="/addProduct" color="inherit">
+              <Button id="AddProductBtn" href="/addProduct" color="inherit">
                 Add product
             </Button>
-              <Button href="/login" color="inherit">
-                Log in
+              <Button id="AccountBtn" onClick={checkLogin} href="/login" color="inherit">
+                {login}
             </Button>
+            <Button id="Cart" href="/cart" color="inherit">
+              Cart
+              </Button>
             </Typography>
           </Toolbar>
         </AppBar>
