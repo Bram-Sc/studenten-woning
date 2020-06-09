@@ -47,7 +47,6 @@ export default class SignUp extends React.Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-
       },
       body: JSON.stringify(data)
     });
@@ -108,7 +107,7 @@ export default class SignUp extends React.Component {
               color="primary"
               id="loginBtn"
               onClick={() => this.LoginUser()}>
-              Sign In
+              Sign Up
             </Button>
           </form>
         </div>

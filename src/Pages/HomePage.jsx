@@ -23,25 +23,33 @@ class HomePage extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ loadedProducts: data });
+        console.log(this.state.loadedProducts);
       })
-      .catch((err) => console.error(this.props.url, err.toString()));
-    this.setState.isLoaded = true
+      .catch((err) => console.error(this.props.url, err.toString())
+      );
+    this.state.isLoaded = true
+  }
+
+  handleClick = (id) => {
+    this.props.addToCart(id);
+    console.log("egg")
   }
 
   render() {
-    const { loadedProducts, isLoaded } = this.state
+    var { loadedProducts, isLoaded } = this.state
 
-    if (!isLoaded || localStorage.getItem("JWT") === "null") {
-      return <div>Are you logged in?</div>
+    if (!isLoaded) {
+      return <div>Loading</div>
+    }
+    if (localStorage.getItem("JWT") === "null" || localStorage.getItem("JWT") === null) {
+      return <div>You are not logged in</div>
     } else {
       return (
-        <body>
-          <div className="flex">
-            {loadedProducts.map(product => {
-              return (<Item name={product.name} message={product.description} />)
-            })}
-          </div>
-        </body>
+        <div className="flex">
+          {loadedProducts.map(product => {
+            return (<Item product={product} />)
+          })}
+        </div>
       )
     }
   }

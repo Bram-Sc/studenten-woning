@@ -5,6 +5,8 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import Navbar from "./Components/Navbar";
 import History from "./Components/History";
+import ProductPage from "./Pages/ProductPage";
+import Cart from "./Pages/Cart";
 
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,6 +30,12 @@ function App() {
         </Route>
         <Route path="/register">
           <RegisterPage />
+        </Route>
+        <Route path="/product">
+          <ProductPage />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
       </Switch>
     </Router>

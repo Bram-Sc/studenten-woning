@@ -53,22 +53,13 @@ export default class AddProduct extends React.Component {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
-
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem("JWT")
       },
       body: JSON.stringify(data)
+    }).then((result) => {
+      console.log(result);
     });
-    const content = rawResponse;
-    var myheaders = new Headers();
-    myheaders.get('Not-Set');
-    myheaders = content.headers;
-
-    console.log(myheaders.get('Authorization'));
-    localStorage.setItem('JWT', myheaders.get('Authorization'))
-
-    if (myheaders.get('Authorization')) {
-      window.location.replace('/index')
-    }
   }
 
   updateName(name) {

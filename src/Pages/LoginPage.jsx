@@ -51,7 +51,6 @@ export default class SignIn extends React.Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-
       },
       body: JSON.stringify(data)
     });
@@ -61,11 +60,29 @@ export default class SignIn extends React.Component {
     myheaders = content.headers;
 
     console.log(myheaders.get('Authorization'));
-    localStorage.setItem('JWT', myheaders.get('Authorization'))
+    localStorage.setItem("JWT", myheaders.get('Authorization'));
 
     if (myheaders.get('Authorization')) {
+      this.GetId();
       window.location.replace('/index')
     }
+  }
+
+  GetId() {
+    fetch('http://localhost:8080/users/ID', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem("JWT")
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      localStorage.setItem('ID', data.id);
+      console.log(localStorage.getItem("ID"));
+    })
   }
 
   updateUsername(username) {

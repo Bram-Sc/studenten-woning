@@ -40,17 +40,17 @@ export default function Navbar() {
   const classes = useStyles();
   var login = "";
 
-  if (localStorage.getItem("JWT") == "null") {
+  if (localStorage.getItem("JWT") === "null" || localStorage.getItem("JWT") === null) {
     login = "Log in";
   } else {
     login = "Log out";
   }
 
   function checkLogin(e) {
-    if (localStorage.getItem("JWT") != "null") {
+    if (localStorage.getItem("JWT") !== "null" && localStorage.getItem("JWT") !== null) {
       localStorage.setItem("JWT", "null");
       e.preventDefault();
-      window.location.reload(false); //TODO: only reloads from chache, might change if needed
+      window.location.reload(false);
     }
   }
 
@@ -60,15 +60,18 @@ export default function Navbar() {
         <AppBar position="static" className={classes.NavBar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              <Button href="/index" color="inherit">
+              <Button id="Home" href="/index" color="inherit">
                 Studenten Woning
             </Button>
-              <Button href="/addProduct" color="inherit">
+              <Button id="AddProductBtn" href="/addProduct" color="inherit">
                 Add product
             </Button>
-              <Button id="LogoutButton" onClick={checkLogin} href="/login" color="inherit">
+              <Button id="AccountBtn" onClick={checkLogin} href="/login" color="inherit">
                 {login}
             </Button>
+            <Button id="Cart" href="/cart" color="inherit">
+              Cart
+              </Button>
             </Typography>
           </Toolbar>
         </AppBar>
