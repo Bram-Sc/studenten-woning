@@ -4,19 +4,6 @@ import "../App.css";
 function Item(props) {
   var product = props.product;
   var cartItems;
-  
-  /*function ProductToCart() {
-    console.log("egg")
-    
-    if (localStorage.getItem("CartItems")===null) {
-      cartItems = [product];
-    } else {
-      cartItems = localStorage.getItem("CartItems");
-      cartItems[cartItems.length] = product.id;
-    }
-
-    localStorage.setItem("CartItems", cartItems);
-  }*/
 
   return (
     <div className="item">

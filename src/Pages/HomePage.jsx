@@ -30,11 +30,6 @@ class HomePage extends Component {
     this.state.isLoaded = true
   }
 
-  handleClick = (id) => {
-    this.props.addToCart(id);
-    console.log("egg")
-  }
-
   render() {
     var { loadedProducts, isLoaded } = this.state
 
