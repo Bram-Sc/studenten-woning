@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import VisibleItemList from '../Containers/VisisbleItemList'
 
 class Cart extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <VisibleItemList/>
+      </div>
     )
   }
 }

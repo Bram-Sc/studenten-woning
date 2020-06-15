@@ -1,18 +1,31 @@
+// import React from 'react';
+// import "../App.css";
+
+// function Item(props) {
+//   var product = props.product;
+
+//   return (
+//     <div className="item">
+//       <p>Name: {product.name}</p>
+//       <p>{product.description}</p>
+//       <p>${product.price}</p>
+//       <button>Add to Cart</button>
+//     </div>
+//   );
+// }
+
+// export default Item;
+
 import React from 'react';
-import "../App.css";
+import PropTypes from 'prop-types';
 
-function Item(props) {
-  var product = props.product;
-  var cartItems;
+const Item = ({ onClick, productId }) => (
+  <li onClick={onClick}>{productId}</li>
+)
 
-  return (
-    <div className="item">
-      <p>Name: {product.name}</p>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      <button>Add to Cart</button>
-    </div>
-  );
+Item.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  productId: PropTypes.number.isRequired
 }
 
 export default Item;

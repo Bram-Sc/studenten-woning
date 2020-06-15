@@ -1,6 +1,8 @@
 import React from 'react';
-import Item from '../Components/Item';
 import { Component } from 'react';
+import AddItem from '../Containers/AddItem'
+import VisisbleItemList from '../Containers/VisisbleItemList'
+import Shop from '../Components/Shop'
 
 class HomePage extends Component {
   constructor(props) {
@@ -31,7 +33,7 @@ class HomePage extends Component {
   }
 
   render() {
-    var { loadedProducts, isLoaded } = this.state
+    var { isLoaded } = this.state
 
     if (!isLoaded) {
       return <div>Loading</div>
@@ -40,10 +42,14 @@ class HomePage extends Component {
       return <div>You are not logged in</div>
     } else {
       return (
-        <div className="flex">
-          {loadedProducts.map(product => {
-            return (<Item product={product} />)
-          })}
+        <div>
+          <AddItem />
+          <div className="flex">
+            {this.state.loadedProducts.map(product => {
+              return (<Shop product={product} />)
+            })}
+          </div>
+          <VisisbleItemList/>
         </div>
       )
     }
