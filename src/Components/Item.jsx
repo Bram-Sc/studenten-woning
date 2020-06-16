@@ -23,11 +23,11 @@ function Item(props) {
   }
 
   return (
-    <div className="item">
+    <div className="item" id="item">
       <p>Name: {product.name}</p>
       <p>{product.description}</p>
       <p>€{product.price}</p>
-      <button onClick={AddToCart} value={product.id}>Add to Cart</button>
+      <button onClick={AddToCart} value={product.id} id="addToCart">Add to Cart</button>
     </div>
   );
 }

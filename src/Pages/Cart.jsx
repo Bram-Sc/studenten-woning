@@ -22,7 +22,7 @@ function Cart(props) {
       {cartItems.map(item => {
         return (
           <dl className="flex">
-            <dd className="itemCart">
+            <dd className="itemCart" id="cartItem" value={item.id}>
               <p>{item.name}</p>
               <p>€{item.price}</p>
             </dd>

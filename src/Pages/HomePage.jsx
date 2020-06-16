@@ -40,7 +40,7 @@ class HomePage extends Component {
       return <div>You are not logged in</div>
     } else {
       return (
-        <div className="flex">
+        <div className="flex" name="shop">
           {loadedProducts.map(product => {
             return (<Item product={product} />)
           })}
