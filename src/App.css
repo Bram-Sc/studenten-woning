@@ -19,6 +19,22 @@ body {
   margin: 10px;
 }
 
+.item p{
+  padding: 5px;
+}
+
+.itemCart {
+  height: 50px;
+  width: 500px;
+  background-color: #fff0db;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.itemCart p {
+  padding-left: 5px;
+}
+
 .navbar ul {
   list-style-type: none;
   margin: 0;
