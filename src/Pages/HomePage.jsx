@@ -30,11 +30,6 @@ class HomePage extends Component {
     this.state.isLoaded = true
   }
 
-  handleClick = (id) => {
-    this.props.addToCart(id);
-    console.log("egg")
-  }
-
   render() {
     var { loadedProducts, isLoaded } = this.state
 
@@ -45,7 +40,7 @@ class HomePage extends Component {
       return <div>You are not logged in</div>
     } else {
       return (
-        <div className="flex">
+        <div className="flex" name="shop">
           {loadedProducts.map(product => {
             return (<Item product={product} />)
           })}
